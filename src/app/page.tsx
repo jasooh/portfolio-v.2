@@ -1,11 +1,10 @@
-import TestCard from "@/components/TestCard";
-import Image from "next/image";
+import "../styling/constants.css";
 
 export default function Home() {
   return (
-    <main className="overflow-hidden w-full h-fit min-h-screen">
-      <div className="w-full h-screen flex items-center justify-center">
-        <TestCard />
+    <main className="page-container">
+      <div className="col-container">
+        <h1>Hello World!</h1>
       </div>
     </main>
   );
