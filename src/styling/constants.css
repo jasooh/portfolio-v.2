@@ -1,0 +1,17 @@
+/* Constant styling for the app */
+
+@tailwind components;
+
+@layer components {
+  .page-container {
+    @apply overflow-hidden w-full h-fit min-h-screen;
+  }
+
+  .row-container {
+    @apply flex flex-row;
+  }
+
+  .col-container {
+    @apply h-screen flex flex-col items-center justify-center;
+  }
+}
