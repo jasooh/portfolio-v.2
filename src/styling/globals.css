@@ -26,7 +26,7 @@
     --radius: 0.5rem;
   }
   .dark {
-    --background: 45 50% 5%;
+    --background: 0 0% 5%;
     --foreground: 45 5% 90%;
     --card: 45 50% 0%;
     --card-foreground: 45 5% 90%;
@@ -34,7 +34,7 @@
     --popover-foreground: 45 5% 90%;
     --primary: 45 69.2% 55.5%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 45 30% 10%;
+    --secondary: 45, 69%, 55%;
     --secondary-foreground: 0 0% 100%;
     --muted: 7 30% 15%;
     --muted-foreground: 45 5% 60%;
@@ -51,7 +51,10 @@
 
 @layer base {
   h1 {
-    @apply text-2xl font-extrabold;
+    @apply text-background text-7xl font-black italic;
+  }
+  h2 {
+    @apply font-medium;
   }
   * {
     @apply border-border;

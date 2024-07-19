@@ -3,15 +3,43 @@
 @tailwind components;
 
 @layer components {
-  .page-container {
-    @apply overflow-hidden w-full h-fit min-h-screen;
+  /* Text effects */
+  .text-stroke {
+    text-shadow: #ffffff 0.05rem 0.05rem 0px, #ffffff -0.05rem 0.05rem 0px,
+      #ffffff 0.05rem -0.05rem 0px, #ffffff -0.05rem -0.05rem 0px;
   }
 
+  /* Screen */
+  .page-container {
+    @apply overflow-hidden w-full h-fit min-h-screen bg-gradient-to-b from-background to-black;
+  }
+
+  .full-screen-fit {
+    @apply w-full h-fit min-h-screen;
+  }
+
+  .fit-parent {
+    @apply w-full h-full;
+  }
+
+  .fit-self {
+    @apply w-fit h-fit;
+  }
+
+  /* Flex */
   .row-container {
     @apply flex flex-row;
   }
 
   .col-container {
-    @apply h-screen flex flex-col items-center justify-center;
+    @apply flex flex-col;
+  }
+
+  .dead-center {
+    @apply items-center justify-center;
+  }
+
+  .align-right {
+    @apply justify-end;
   }
 }
