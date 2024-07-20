@@ -1,5 +1,8 @@
 // Root layout
 
+// Data types
+import { ReactNode } from "react";
+
 // Metadata & Fonts
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
@@ -12,19 +15,19 @@ export const metadata: Metadata = {
 };
 
 // Theme provider
-import { ThemeProvider } from "@/components/ThemeProvider";
+import ThemeProvider from "@/components/theme/ThemeProvider";
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en">
       <body className={montserrat.className}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >

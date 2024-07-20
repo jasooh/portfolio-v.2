@@ -5,8 +5,10 @@
 @layer components {
   /* Text effects */
   .text-stroke {
-    text-shadow: #ffffff 0.05rem 0.05rem 0px, #ffffff -0.05rem 0.05rem 0px,
-      #ffffff 0.05rem -0.05rem 0px, #ffffff -0.05rem -0.05rem 0px;
+    text-shadow: hsl(var(--stroke)) 0.05rem 0.05rem 0px,
+      hsl(var(--stroke)) -0.05rem 0.05rem 0px,
+      hsl(var(--stroke)) 0.05rem -0.05rem 0px,
+      hsl(var(--stroke)) -0.05rem -0.05rem 0px;
   }
 
   /* Screen */
@@ -14,7 +16,7 @@
     @apply overflow-hidden w-full h-fit min-h-screen bg-gradient-to-b from-background to-black;
   }
 
-  .full-screen-fit {
+  .full-parent-fit {
     @apply w-full h-fit min-h-screen;
   }
 
@@ -23,6 +25,12 @@
   }
 
   .fit-self {
+    @apply w-fit h-fit;
+  }
+
+  /* Classes for content container */
+
+  .section-container {
     @apply w-fit h-fit;
   }
 
@@ -37,9 +45,5 @@
 
   .dead-center {
     @apply items-center justify-center;
-  }
-
-  .align-right {
-    @apply justify-end;
   }
 }

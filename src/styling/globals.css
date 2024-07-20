@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  /* Light theme WIP */
   :root {
-    --background: 45 100% 95%;
+    --background: 49, 85%, 95%;
     --foreground: 45 5% 0%;
     --card: 45 50% 90%;
     --card-foreground: 45 5% 10%;
@@ -23,8 +24,10 @@
     --border: 45 30% 50%;
     --input: 45 30% 18%;
     --ring: 45 69.2% 55.5%;
+    --stroke: 0, 0%, 0%;
     --radius: 0.5rem;
   }
+  /* Dark theme */
   .dark {
     --background: 0 0% 5%;
     --foreground: 45 5% 90%;
@@ -45,6 +48,7 @@
     --border: 45 30% 18%;
     --input: 45 30% 18%;
     --ring: 45 69.2% 55.5%;
+    --stroke: 0, 0%, 100%;
     --radius: 0.5rem;
   }
 }

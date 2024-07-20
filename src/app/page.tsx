@@ -1,39 +1,28 @@
 // CSS
 import "../styling/constants.css";
 
+// Section components
+import NameSection from "@/components/sections/NameSection";
+import SummarySection from "@/components/sections/SummarySection";
+import ExperienceSection from "@/components/sections/ExperienceSection";
+import ProjectSection from "@/components/sections/ProjectSection";
+import ContactSection from "@/components/sections/ContactSection";
+
 export default function Home() {
   return (
     <main className="page-container px-96 pt-20">
       {/* Name section */}
-      <header className="fixed fit-self">
-        <p>Hey, I'm</p>
-        <h1 className="text-stroke mb-2">
-          JUSTIN <br /> ABUYUAN
-        </h1>
-        <h2>
-          Engineering Student @ the{" "}
-          <span className="text-secondary">University of Waterloo</span>
-        </h2>
-      </header>
+      <NameSection />
 
       {/* Content section */}
-      <section className="full-screen-fit row-container align-right">
-        {/* Summary */}
-        <div className="w-1/2">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
-            dicta assumenda pariatur minima nisi est fuga veniam aliquid
-            architecto eos eum nobis ut adipisci, vero, consectetur voluptas
-            ullam dolorem explicabo!
-          </p>
+      <article className="full-parent-fit row-container justify-end">
+        <div className="col-container w-1/2 gap-5">
+          <SummarySection />
+          <ExperienceSection />
+          <ProjectSection />
+          <ContactSection />
         </div>
-
-        {/* Experience */}
-
-        {/* Projects */}
-
-        {/* Contact */}
-      </section>
+      </article>
     </main>
   );
 }
