@@ -61,7 +61,13 @@
     @apply font-medium;
   }
   h3 {
-    @apply font-extralight;
+    @apply font-normal;
+  }
+  h4 {
+    @apply font-extralight text-sm;
+  }
+  p {
+    @apply font-light;
   }
   * {
     @apply border-border;

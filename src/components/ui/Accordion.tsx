@@ -5,6 +5,7 @@ import * as AccordionPrimitive from "@radix-ui/react-accordion";
 
 // Components
 import Image from "next/image";
+import { Badge } from "../ui/badge";
 import { ChevronDown } from "lucide-react";
 
 // Class name merger
@@ -23,32 +24,37 @@ AccordionItem.displayName = "AccordionItem";
 const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <AccordionPrimitive.Header className="flex">
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 items-center justify-between px-2 py-4 font-medium rounded-t-lg transition-all hover:bg-primary-foreground duration-300 [&[data-state=open]>svg]:rotate-180 data-[state=closed]:rounded-b-lg",
+        "flex flex-1 items-center justify-between p-4 font-medium rounded-t-lg transition-all [&[data-state=open]>svg]:rotate-180 data-[state=closed]:rounded-b-lg hover:bg-primary-foreground",
         className
       )}
       {...props}
     >
-      {/* Experience info */}
-      <section className="row-container gap-5">
+      {/* Accordion title */}
+      <section className="row-container gap-3">
         <Image
-          className="w-[7rem] object-cover rounded-md xl:block hidden"
+          src="/placeholder.jpg"
+          className="w-[8rem] object-cover rounded-md"
+          width={500}
+          height={500}
           alt="placeholder"
-          width="500"
-          height="500"
-          src={"/placeholder.jpg"}
-        ></Image>
+        />
         <div className="col-container items-start">
-          <h2 className="text-secondary">{props.title}</h2>
+          <h2 className="text-secondary tracking-widest">{props.title}</h2>
           <h3>{props.role}</h3>
-          <p className="text-sm">{props.date}</p>
+          <h4 className="mb-2">{props.date}</h4>
+          <div className="row-container gap-2">
+            {props.badges.map((text) => (
+              <Badge variant="outline">{text}</Badge>
+            ))}
+          </div>
         </div>
       </section>
-      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
+      <ChevronDown className="text-secondary h-4 w-4 shrink-0 transition-transform duration-200" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));
@@ -60,13 +66,12 @@ const AccordionContent = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
-    className="overflow-hidden text-sm text-black transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down bg-secondary p-5 rounded-b-lg"
+    className="overflow-hidden text-black text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down bg-secondary rounded-b-lg"
     {...props}
   >
-    <div className={cn("pb-4 pt-0", className)}>{children}</div>
+    <div className={cn("p-4", className)}>{children}</div>
   </AccordionPrimitive.Content>
 ));
-
 AccordionContent.displayName = AccordionPrimitive.Content.displayName;
 
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };
