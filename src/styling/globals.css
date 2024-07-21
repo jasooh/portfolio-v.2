@@ -36,9 +36,9 @@
     --popover: 45 50% 5%;
     --popover-foreground: 45 5% 90%;
     --primary: 45 69.2% 55.5%;
-    --primary-foreground: 0 0% 100%;
+    --primary-foreground: 0, 0%, 10%;
     --secondary: 45, 69%, 55%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary-foreground: 0, 0%, 10%;
     --muted: 7 30% 15%;
     --muted-foreground: 45 5% 60%;
     --accent: 7 30% 15%;
@@ -59,6 +59,9 @@
   }
   h2 {
     @apply font-medium;
+  }
+  h3 {
+    @apply font-extralight;
   }
   * {
     @apply border-border;

@@ -29,7 +29,7 @@ const NameSection: React.FC = () => (
     </section>
 
     {/* Typed text */}
-    <section className="mb-5">
+    <section className="h-[3rem] mb-5">
       <TypedText text={words[0]} className="text-secondary" speed={10} />
     </section>
 
@@ -42,5 +42,6 @@ const NameSection: React.FC = () => (
     </nav>
   </header>
 );
+NameSection.displayName = "NameSection";
 
 export default NameSection;

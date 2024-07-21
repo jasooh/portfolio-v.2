@@ -22,5 +22,6 @@ const SummarySection: React.FC = () => (
     </RichText>
   </section>
 );
+SummarySection.displayName = "SummarySection";
 
 export default SummarySection;

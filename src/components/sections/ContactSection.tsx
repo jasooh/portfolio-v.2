@@ -3,5 +3,6 @@
 const ContactSection: React.FC = () => (
   <section className="section-container">contact.</section>
 );
+ContactSection.displayName = "ContactSection";
 
 export default ContactSection;

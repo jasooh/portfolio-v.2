@@ -16,5 +16,6 @@ const TypedText: React.FC<TypedTextProps> = ({ text, className, speed }) => (
     <Typewriter options={{ strings: text, autoStart: true, delay: speed }} />
   </div>
 );
+TypedText.displayName = "TypedText";
 
 export default TypedText;
