@@ -31,7 +31,7 @@
   /* Classes for content container */
 
   .section-container {
-    @apply w-fit h-fit;
+    @apply w-full h-fit;
   }
 
   /* Flex */

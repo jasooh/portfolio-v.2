@@ -16,7 +16,7 @@ export default function Home() {
 
       {/* Content section */}
       <article className="full-parent-fit row-container justify-end">
-        <div className="col-container w-1/2 gap-5">
+        <div className="col-container w-1/2 gap-24">
           <SummarySection />
           <ExperienceSection />
           <ProjectSection />
