@@ -29,7 +29,7 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 items-center justify-between p-4 font-medium rounded-t-lg transition-all [&[data-state=open]>svg]:rotate-180 data-[state=closed]:rounded-b-lg hover:bg-primary-foreground",
+        "flex flex-1 items-center justify-between p-4 font-medium rounded-t-lg border border-transparent transition-all [&[data-state=open]>svg]:rotate-180 data-[state=closed]:rounded-b-lg hover:bg-primary-foreground hover:border-secondary",
         className
       )}
       {...props}
@@ -37,7 +37,7 @@ const AccordionTrigger = React.forwardRef<
       {/* Accordion title */}
       <section className="row-container gap-3">
         <Image
-          src="/placeholder.jpg"
+          src={props.src}
           className="w-[8rem] object-cover rounded-md"
           width={500}
           height={500}

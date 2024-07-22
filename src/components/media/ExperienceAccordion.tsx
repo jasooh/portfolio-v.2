@@ -16,6 +16,7 @@ interface ProjectAccordionProps {
   role: string;
   date: string;
   badges: string[];
+  src: string;
   children?: ReactNode;
 }
 
@@ -24,6 +25,7 @@ const ProjectAccordion: React.FC<ProjectAccordionProps> = ({
   role,
   date,
   badges,
+  src,
   children,
 }) => (
   <Accordion type="single" collapsible>
@@ -32,6 +34,7 @@ const ProjectAccordion: React.FC<ProjectAccordionProps> = ({
         title={title}
         role={role}
         date={date}
+        src={src}
         badges={badges}
       ></AccordionTrigger>
       <AccordionContent>{children}</AccordionContent>
