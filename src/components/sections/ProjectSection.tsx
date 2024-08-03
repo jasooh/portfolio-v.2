@@ -1,3 +1,5 @@
+"use client";
+
 // Section containing project content. Receives content from backend.
 
 // Components
@@ -9,6 +11,9 @@ import {
   CarouselPrevious,
 } from "@/components/ui/Carousel";
 import ProjectCard from "../media/ProjectCard";
+
+// shadcn/ui & embla carousel
+import Autoplay from "embla-carousel-autoplay";
 
 // Test data
 const info = [
@@ -44,7 +49,7 @@ const info = [
 
 const ProjectSection: React.FC = () => (
   <section className="section-container row-container justify-center">
-    <Carousel className="w-full max-w-xs">
+    <Carousel className="w-full max-w-md" plugins={[Autoplay({ delay: 5000 })]}>
       <CarouselContent>
         {info.map((project, index) => (
           <CarouselItem key={index}>
