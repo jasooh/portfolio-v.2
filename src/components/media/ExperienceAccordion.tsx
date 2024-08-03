@@ -3,14 +3,6 @@
 // Data types
 import { ReactNode } from "react";
 
-// shadcn/ui
-import {
-  Accordion,
-  AccordionItem,
-  AccordionContent,
-  AccordionTrigger,
-} from "../ui/Accordion";
-
 interface ProjectAccordionProps {
   title: string;
   role: string;
@@ -19,6 +11,19 @@ interface ProjectAccordionProps {
   src: string;
   children?: ReactNode;
 }
+
+// Components
+import Image from "next/image";
+import { Badge } from "../ui/Badge";
+import { ChevronDown } from "lucide-react";
+
+// shadcn/ui
+import {
+  Accordion,
+  AccordionItem,
+  AccordionContent,
+  AccordionTrigger,
+} from "../ui/Accordion";
 
 const ProjectAccordion: React.FC<ProjectAccordionProps> = ({
   title,
@@ -30,13 +35,29 @@ const ProjectAccordion: React.FC<ProjectAccordionProps> = ({
 }) => (
   <Accordion type="single" collapsible>
     <AccordionItem value="item-1">
-      <AccordionTrigger
-        title={title}
-        role={role}
-        date={date}
-        src={src}
-        badges={badges}
-      ></AccordionTrigger>
+      <AccordionTrigger>
+        {/* Accordion title */}
+        <section className="row-container gap-3">
+          <Image
+            src={src}
+            className="w-[8rem] object-cover rounded-md"
+            width={500}
+            height={500}
+            alt="placeholder"
+          />
+          <div className="col-container items-start">
+            <h2 className="text-secondary tracking-widest">{title}</h2>
+            <h3>{role}</h3>
+            <h4 className="mb-2">{date}</h4>
+            <div className="row-container gap-2">
+              {badges.map((text) => (
+                <Badge variant="outline">{text}</Badge>
+              ))}
+            </div>
+          </div>
+        </section>
+        <ChevronDown className="text-secondary h-4 w-4 shrink-0 transition-transform duration-200" />
+      </AccordionTrigger>
       <AccordionContent>{children}</AccordionContent>
     </AccordionItem>
   </Accordion>

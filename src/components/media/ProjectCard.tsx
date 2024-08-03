@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/Card";
 import Image from "next/image";
-import { Badge } from "../ui/badge";
+import { Badge } from "../ui/Badge";
 
 interface ProjectCardProps {
   title: string;

@@ -3,11 +3,6 @@
 import * as React from "react";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 
-// Components
-import Image from "next/image";
-import { Badge } from "../ui/badge";
-import { ChevronDown } from "lucide-react";
-
 // Class name merger
 import { cn } from "@/lib/utils";
 
@@ -33,29 +28,7 @@ const AccordionTrigger = React.forwardRef<
         className
       )}
       {...props}
-    >
-      {/* Accordion title */}
-      <section className="row-container gap-3">
-        <Image
-          src={props.src}
-          className="w-[8rem] object-cover rounded-md"
-          width={500}
-          height={500}
-          alt="placeholder"
-        />
-        <div className="col-container items-start">
-          <h2 className="text-secondary tracking-widest">{props.title}</h2>
-          <h3>{props.role}</h3>
-          <h4 className="mb-2">{props.date}</h4>
-          <div className="row-container gap-2">
-            {props.badges.map((text) => (
-              <Badge variant="outline">{text}</Badge>
-            ))}
-          </div>
-        </div>
-      </section>
-      <ChevronDown className="text-secondary h-4 w-4 shrink-0 transition-transform duration-200" />
-    </AccordionPrimitive.Trigger>
+    />
   </AccordionPrimitive.Header>
 ));
 AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
