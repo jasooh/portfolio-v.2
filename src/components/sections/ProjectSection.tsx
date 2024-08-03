@@ -19,28 +19,21 @@ import Autoplay from "embla-carousel-autoplay";
 const info = [
   {
     title: "Black Magic II",
-    role: "Class Developer",
-    date: "2019 - 2022",
+    type: "Game",
+    date: "2019",
     badges: ["Lua", "Blender", "Roblox Studio"],
     src: "/placeholder.jpg",
   },
   {
     title: "Path Pilot",
-    role: "Lead Programmer",
+    type: "Hackathon project",
     date: "2023",
     badges: ["Express.js", "Twilio", "Google Cloud"],
     src: "/placeholder.jpg",
   },
   {
-    title: "J-Skate",
-    role: "Developer",
-    date: "2024",
-    badges: ["React", "TypeScript", "AWS"],
-    src: "/placeholder.jpg",
-  },
-  {
     title: "React Bacterial Simulator",
-    role: "Lead Programmer",
+    type: "Front-end project",
     date: "2024",
     badges: ["React", "TypeScript", "Tailwind"],
     src: "/placeholder.jpg",
@@ -49,13 +42,17 @@ const info = [
 
 const ProjectSection: React.FC = () => (
   <section className="section-container row-container justify-center">
-    <Carousel className="w-full max-w-md" plugins={[Autoplay({ delay: 5000 })]}>
+    <Carousel
+      className="w-full max-w-md"
+      opts={{ loop: true }}
+      plugins={[Autoplay({ delay: 5000 })]}
+    >
       <CarouselContent>
         {info.map((project, index) => (
           <CarouselItem key={index}>
             <ProjectCard
               title={project.title}
-              role={project.role}
+              type={project.type}
               date={project.date}
               src={project.src}
               badges={project.badges}

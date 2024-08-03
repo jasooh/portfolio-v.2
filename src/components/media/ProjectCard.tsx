@@ -14,7 +14,7 @@ import { Badge } from "../ui/Badge";
 
 interface ProjectCardProps {
   title: string;
-  role: string;
+  type: string;
   date: string;
   src: string;
   badges: string[];
@@ -22,29 +22,33 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
-  role,
+  type,
   date,
   src,
   badges,
 }) => (
   <Card>
+    <CardContent className="p-0 col-container items-center">
+      <Image
+        src={src}
+        className="w-full object-cover rounded-t-md"
+        width={500}
+        height={500}
+        alt="placeholder"
+      />
+    </CardContent>
     <CardHeader>
-      <CardTitle>{title}</CardTitle>
+      <CardTitle>
+        <h2 className="text-secondary mb-2">{title}</h2>
+        <h3 className="text-white mb-1">{type}</h3>
+        <h4>{date}</h4>
+      </CardTitle>
       <CardDescription>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea at ab ipsam
         officia veritatis, quidem dignissimos animi maiores, atque quo amet odio
         adipisci beatae, totam accusantium exercitationem est! Corrupti, magni!
       </CardDescription>
     </CardHeader>
-    <CardContent className="col-container items-center">
-      <Image
-        src={src}
-        className="w-[15rem] object-cover rounded-md"
-        width={500}
-        height={500}
-        alt="placeholder"
-      />
-    </CardContent>
     <CardFooter>
       <div className="row-container gap-2">
         {badges.map((text) => (
