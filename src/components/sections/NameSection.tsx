@@ -3,12 +3,14 @@
 // Components
 import SectionButton from "../buttons/SectionButton";
 import TypedText from "../text/TypedText";
+import IconButton from "../buttons/IconButton";
+import { Button } from "../ui/Button";
 
 // Icon components
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
-import IconButton from "../buttons/IconButton";
+import { IoIosDocument } from "react-icons/io";
 
 // Typewriter info
 const words = [
@@ -21,6 +23,7 @@ const words = [
 const NameSection: React.FC = () => (
   <header className="fixed h-[80%] col-container gap-10 justify-between">
     <article>
+      {/* Hero section */}
       <section>
         {/* Name */}
         <p>
@@ -50,19 +53,26 @@ const NameSection: React.FC = () => (
     </article>
 
     {/* Link section */}
-    <nav className="fit-self row-container gap-3">
-      <IconButton
-        icon={<FaGithub className="size-8" />}
-        src="https://github.com/jasooh"
-      />
-      <IconButton
-        icon={<FaLinkedin className="size-8" />}
-        src="https://www.linkedin.com/in/justin-abuyuan/"
-      />
-      <IconButton
-        icon={<SiLeetcode className="size-8" />}
-        src="https://leetcode.com/u/jasooh/"
-      />
+    <nav className="row-container justify-between">
+      <section className="row-container gap-3">
+        <IconButton
+          icon={<FaGithub className="size-8" />}
+          src="https://github.com/jasooh"
+        />
+        <IconButton
+          icon={<FaLinkedin className="size-8" />}
+          src="https://www.linkedin.com/in/justin-abuyuan/"
+        />
+        <IconButton
+          icon={<SiLeetcode className="size-8" />}
+          src="https://leetcode.com/u/jasooh/"
+        />
+      </section>
+      {/* TODO: Link to S3 bucket */}
+      <Button variant="outline" className="row-container gap-1">
+        <IoIosDocument className="size-5" />
+        Resume
+      </Button>
     </nav>
   </header>
 );

@@ -19,7 +19,7 @@ import {
   FormMessage,
 } from "@/components/ui/Form";
 import { Input } from "@/components/ui/Input";
-import { TextArea } from "../ui/textarea";
+import { TextArea } from "../ui/TextArea";
 
 const ContactSection: React.FC = () => {
   // Form requirements
@@ -48,10 +48,13 @@ const ContactSection: React.FC = () => {
 
   return (
     <section className="section-container col-container gap-3">
+      {/* Form header */}
       <header className="row-container gap-2">
         <span className="text-secondary">//</span>
-        <h4 className="opacity-50">Like what you see? You know what to do.</h4>
+        <h4 className="opacity-50">Like what you see? I'd love to chat.</h4>
       </header>
+
+      {/* Form section */}
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <FormField
@@ -74,7 +77,7 @@ const ContactSection: React.FC = () => {
               <FormItem>
                 <FormLabel>Message</FormLabel>
                 <FormControl>
-                  <TextArea {...field} />
+                  <TextArea placeholder="Message" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -83,6 +86,8 @@ const ContactSection: React.FC = () => {
           <Button type="submit">Submit</Button>
         </form>
       </Form>
+
+      {/* Credits */}
       <section className="mt-10 opacity-50">
         <p className="text-sm">
           Built with ❤ using <strong>Next.js</strong> and{" "}
