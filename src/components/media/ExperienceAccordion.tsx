@@ -50,8 +50,10 @@ const ProjectAccordion: React.FC<ProjectAccordionProps> = ({
             <h3>{role}</h3>
             <h4 className="mb-2">{date}</h4>
             <div className="row-container gap-2">
-              {badges.map((text) => (
-                <Badge variant="outline">{text}</Badge>
+              {badges.map((text, index) => (
+                <Badge key={index} variant="outline">
+                  {text}
+                </Badge>
               ))}
             </div>
           </div>

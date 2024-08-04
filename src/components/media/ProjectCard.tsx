@@ -51,8 +51,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     </CardHeader>
     <CardFooter>
       <div className="row-container gap-2">
-        {badges.map((text) => (
-          <Badge variant="outline">{text}</Badge>
+        {badges.map((text, index) => (
+          <Badge key={index} variant="outline">
+            {text}
+          </Badge>
         ))}
       </div>
     </CardFooter>
