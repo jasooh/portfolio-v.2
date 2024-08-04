@@ -71,7 +71,7 @@ const NameSection: React.FC = () => (
       {/* TODO: Link to S3 bucket */}
       <Button variant="outline" className="row-container gap-1">
         <IoIosDocument className="size-5" />
-        Resume
+        Résumé
       </Button>
     </nav>
   </header>
