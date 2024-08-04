@@ -1,7 +1,7 @@
 // Section containing summary text. Retrieves summary text from backend.
 
 // Components
-import RichText from "../text/RichText";
+import RichText from "../../text/RichText";
 
 const SummarySection: React.FC = () => (
   <section className="section-container">

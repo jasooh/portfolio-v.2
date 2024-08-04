@@ -12,14 +12,13 @@ import { Button } from "@/components/ui/Button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/Form";
 import { Input } from "@/components/ui/Input";
-import { TextArea } from "../ui/TextArea";
+import { TextArea } from "../../ui/TextArea";
 
 const ContactSection: React.FC = () => {
   // Form requirements
@@ -32,7 +31,7 @@ const ContactSection: React.FC = () => {
       .min(50, { message: "Please enter at least 50 characters." }),
   });
 
-  // Defining form
+  // Defining form and default values
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -51,7 +50,7 @@ const ContactSection: React.FC = () => {
       {/* Form header */}
       <header className="row-container gap-2">
         <span className="text-secondary">//</span>
-        <h4 className="opacity-50">Like what you see? I'd love to chat.</h4>
+        <h4 className="opacity-50">Like what you see? Let's have a chat.</h4>
       </header>
 
       {/* Form section */}

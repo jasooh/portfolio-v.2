@@ -1,7 +1,7 @@
 // Section containing experience content. Retrieves content from backend.
 
 // Components
-import ExperienceAccordion from "../media/ExperienceAccordion";
+import ExperienceAccordion from "../../media/ExperienceAccordion";
 
 // Test data
 const info = [

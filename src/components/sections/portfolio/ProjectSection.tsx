@@ -10,7 +10,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/Carousel";
-import ProjectCard from "../media/ProjectCard";
+import ProjectCard from "../../media/ProjectCard";
 
 // shadcn/ui & embla carousel
 import Autoplay from "embla-carousel-autoplay";
