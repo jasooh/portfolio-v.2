@@ -10,7 +10,7 @@ import ContactSection from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
-    <main className="page-container px-96 pt-20">
+    <main className="page-container px-[20%] pt-20">
       {/* Name section */}
       <NameSection />
 
