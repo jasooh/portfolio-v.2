@@ -2,9 +2,9 @@
 import "@/styling/constants.css";
 export default function Home() {
   return (
-    <main>
+    <main className="w-full h-full col-container items-center justify-center">
       <header>
-        <h2>Admin Panel</h2>
+        <h2>Experience Panel</h2>
       </header>
     </main>
   );

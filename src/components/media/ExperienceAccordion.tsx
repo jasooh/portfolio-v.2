@@ -46,7 +46,7 @@ const ProjectAccordion: React.FC<ProjectAccordionProps> = ({
             alt="placeholder"
           />
           <div className="col-container items-start text-left">
-            <h2 className="text-secondary tracking-widestt">{title}</h2>
+            <h2 className="text-secondary tracking-widest">{title}</h2>
             <h3>{role}</h3>
             <h4 className="mb-2">{date}</h4>
             <div className="row-container gap-2 flex-wrap">
