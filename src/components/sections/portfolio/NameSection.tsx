@@ -31,7 +31,7 @@ const NameSection: React.FC = () => {
   const current = SectionContext.currentSection;
 
   return (
-    <header className="fixed h-[80%] col-container gap-10 justify-between">
+    <header className="z-10 block lg:fixed h-[80%] w-3/4 lg:w-auto mb-20 col-container gap-10 justify-between">
       <article>
         {/* Hero section */}
         <section>
@@ -39,7 +39,7 @@ const NameSection: React.FC = () => {
           <p>
             <span className="text-secondary">Hey</span>, I'm
           </p>
-          <h1 className="text-stroke mb-2">
+          <h1 className="text-stroke mb-2 text-5xl lg:text-7xl">
             JUSTIN <br /> ABUYUAN
           </h1>
           <h2 className="mb-5">
@@ -52,7 +52,7 @@ const NameSection: React.FC = () => {
         <section className="h-[3rem] mb-5">
           <TypedText
             text={words[current]}
-            className="h-[4rem] w-[25rem] text-secondary"
+            className="fit-parent max-w-[25rem] text-secondary"
             speed={10}
           />
         </section>
@@ -60,8 +60,16 @@ const NameSection: React.FC = () => {
         {/* Button section */}
         <nav className="w-3/4 col-container align-right items-start gap-1">
           <SectionButton text="SUMMARY" destinationRef=".summary" section={0} />
-          <SectionButton text="EXPERIENCE" destinationRef=".experience" section={1} />
-          <SectionButton text="PROJECTS" destinationRef=".project" section={2} />
+          <SectionButton
+            text="EXPERIENCE"
+            destinationRef=".experience"
+            section={1}
+          />
+          <SectionButton
+            text="PROJECTS"
+            destinationRef=".project"
+            section={2}
+          />
           <SectionButton text="CONTACT" destinationRef=".contact" section={3} />
         </nav>
       </article>

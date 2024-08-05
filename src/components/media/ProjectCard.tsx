@@ -50,7 +50,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </CardDescription>
     </CardHeader>
     <CardFooter>
-      <div className="row-container gap-2">
+      <div className="row-container gap-2 flex-wrap">
         {badges.map((text, index) => (
           <Badge key={index} variant="outline">
             {text}
