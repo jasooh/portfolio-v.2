@@ -37,7 +37,7 @@ const NameSection: React.FC = () => {
         <section>
           {/* Name */}
           <p>
-            <span className="text-secondary">Hey</span>, I'm
+            <span className="text-secondary">Hey</span>, I&apos;m
           </p>
           <h1 className="text-stroke mb-2 text-5xl lg:text-7xl">
             JUSTIN <br /> ABUYUAN

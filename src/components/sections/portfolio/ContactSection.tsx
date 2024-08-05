@@ -53,8 +53,10 @@ const ContactSection: React.FC = () => {
     >
       {/* Form header */}
       <header className="row-container gap-2">
-        <span className="text-secondary">//</span>
-        <h4 className="opacity-50">Like what you see? Let's have a chat.</h4>
+        <span className="text-secondary">{"//"}</span>
+        <h4 className="opacity-50">
+          Like what you see? Let&apos;s have a chat.
+        </h4>
       </header>
 
       {/* Form section */}

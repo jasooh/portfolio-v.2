@@ -33,7 +33,7 @@ const PortfolioSectionContainer: React.FC = () => {
 
     const elements = document.querySelectorAll(".observe");
     elements.forEach((element) => observer.observe(element));
-  }, []);
+  }, [SectionContext]);
 
   return (
     <>

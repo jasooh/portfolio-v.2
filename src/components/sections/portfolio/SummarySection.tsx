@@ -7,8 +7,8 @@ const SummarySection: React.FC = () => (
   <section id="0" className="summary observe section-container">
     <RichText>
       <span className="text-secondary">
-        In 2015, I wrote my first ever program in Lua using ROBLOX Studio's game
-        engine.{" "}
+        In 2015, I wrote my first ever program in Lua using ROBLOX Studio&apos;s
+        game engine.{" "}
       </span>
       It was a simple script that teleported the player to another location on
       the map. <br /> <br />
