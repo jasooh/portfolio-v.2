@@ -1,5 +1,8 @@
 // Root layout
 
+// Analytics
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 // Data types
 import { ReactNode } from "react";
 
