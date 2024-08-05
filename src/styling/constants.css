@@ -28,8 +28,25 @@
     @apply w-fit h-fit;
   }
 
-  /* Classes for content container */
+  /* Custom scroll bar */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
 
+  ::-webkit-scrollbar-track {
+    background: #0d0d0d;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #dcb53f;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  /* Classes for content container */
   .section-container {
     @apply w-full h-fit mb-20 z-10;
   }
