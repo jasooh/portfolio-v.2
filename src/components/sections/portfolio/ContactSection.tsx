@@ -28,7 +28,8 @@ const ContactSection: React.FC = () => {
     }),
     message: z
       .string()
-      .min(50, { message: "Please enter at least 50 characters." }),
+      .min(50, { message: "Please enter at least 50 characters." })
+      .max(1000, { message: "Please enter less than 1000 characters." }),
   });
 
   // Defining form and default values
@@ -46,7 +47,7 @@ const ContactSection: React.FC = () => {
   }
 
   return (
-    <section className="section-container col-container gap-3">
+    <section id="3" className="observe section-container col-container gap-3">
       {/* Form header */}
       <header className="row-container gap-2">
         <span className="text-secondary">//</span>

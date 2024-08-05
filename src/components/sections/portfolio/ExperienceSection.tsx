@@ -29,10 +29,11 @@ const info = [
 ];
 
 const ExperienceSection: React.FC = () => (
-  <section className="section-container col-container gap-2">
+  <section id="1" className="observe section-container col-container gap-2">
     {/* Accordion */}
-    {info.map((experience) => (
+    {info.map((experience, index) => (
       <ExperienceAccordion
+        key={index}
         title={experience.title}
         role={experience.role}
         date={experience.date}

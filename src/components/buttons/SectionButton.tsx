@@ -22,9 +22,10 @@ const SectionButton: React.FC<SectionButtonProps> = ({
   section,
   onClick,
 }) => {
+  // Define context
   const SectionContext = useSectionContext();
   const current = SectionContext.currentSection;
-  const isSelected = current === section;
+  const isSelected = current == section;
 
   return (
     <button

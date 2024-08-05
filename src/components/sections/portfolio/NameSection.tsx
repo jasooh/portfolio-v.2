@@ -27,12 +27,9 @@ const words = [
 ];
 
 const NameSection: React.FC = () => {
+  // Define context
   const SectionContext = useSectionContext();
   const current = SectionContext.currentSection;
-
-  useEffect(() => {
-    console.log("Section changed to: " + current);
-  }, [current]);
 
   return (
     <header className="fixed h-[80%] col-container gap-10 justify-between">
