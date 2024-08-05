@@ -12,25 +12,33 @@ import { useSectionContext } from "@/context/SectionContext";
 interface SectionButtonProps {
   className?: string;
   text: string;
+  destinationRef: string;
   section: number;
-  onClick: () => void;
 }
 
 const SectionButton: React.FC<SectionButtonProps> = ({
-  text,
   className,
+  text,
+  destinationRef,
   section,
-  onClick,
 }) => {
   // Define context
   const SectionContext = useSectionContext();
   const current = SectionContext.currentSection;
   const isSelected = current == section;
 
+  // Define onClick callback
+  function onSectionClick() {
+    document
+      .querySelector(destinationRef)
+      ?.scrollIntoView({ behavior: "smooth" });
+    SectionContext.setCurrentSection(section);
+  }
+
   return (
     <button
       className={cn("group row-container items-center w-2/3", className)}
-      onClick={onClick}
+      onClick={onSectionClick}
     >
       <VscChevronRight
         className={`group-hover:translate-x-1 duration-300  ${

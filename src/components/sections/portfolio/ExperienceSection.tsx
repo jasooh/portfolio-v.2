@@ -29,7 +29,7 @@ const info = [
 ];
 
 const ExperienceSection: React.FC = () => (
-  <section id="1" className="observe section-container col-container gap-2">
+  <section id="1" className="experience observe section-container col-container gap-2">
     {/* Accordion */}
     {info.map((experience, index) => (
       <ExperienceAccordion

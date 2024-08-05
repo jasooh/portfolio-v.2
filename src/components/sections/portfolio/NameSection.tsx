@@ -13,7 +13,6 @@ import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 import { IoIosDocument } from "react-icons/io";
-import { useEffect } from "react";
 
 // Context
 import { useSectionContext } from "@/context/SectionContext";
@@ -60,26 +59,10 @@ const NameSection: React.FC = () => {
 
         {/* Button section */}
         <nav className="w-3/4 col-container align-right items-start gap-1">
-          <SectionButton
-            text="SUMMARY"
-            section={0}
-            onClick={() => SectionContext.setCurrentSection(0)}
-          />
-          <SectionButton
-            text="EXPERIENCE"
-            section={1}
-            onClick={() => SectionContext.setCurrentSection(1)}
-          />
-          <SectionButton
-            text="PROJECTS"
-            section={2}
-            onClick={() => SectionContext.setCurrentSection(2)}
-          />
-          <SectionButton
-            text="CONTACT"
-            section={3}
-            onClick={() => SectionContext.setCurrentSection(3)}
-          />
+          <SectionButton text="SUMMARY" destinationRef=".summary" section={0} />
+          <SectionButton text="EXPERIENCE" destinationRef=".experience" section={1} />
+          <SectionButton text="PROJECTS" destinationRef=".project" section={2} />
+          <SectionButton text="CONTACT" destinationRef=".contact" section={3} />
         </nav>
       </article>
 

@@ -43,7 +43,7 @@ const info = [
 const ProjectSection: React.FC = () => (
   <section
     id="2"
-    className="observe section-container row-container justify-center"
+    className="project observe section-container row-container justify-center"
   >
     <Carousel
       className="w-full max-w-md"

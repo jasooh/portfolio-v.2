@@ -4,7 +4,7 @@
 import RichText from "../../text/RichText";
 
 const SummarySection: React.FC = () => (
-  <section id="0" className="observe section-container">
+  <section id="0" className="summary observe section-container">
     <RichText>
       <span className="text-secondary">
         In 2015, I wrote my first ever program in Lua using ROBLOX Studio's game
