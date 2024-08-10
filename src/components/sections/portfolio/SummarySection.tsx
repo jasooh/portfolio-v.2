@@ -22,7 +22,7 @@ const SummarySection: React.FC = () => (
       difference as much as I am.
       <br />
       <br />
-      When I'm not behind Visual Studio for hours at a time, I love to play
+      When I&apos;m not behind Visual Studio for hours at a time, I love to play
       volleyball and annoy my cat.
     </RichText>
   </section>
