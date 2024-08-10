@@ -29,9 +29,11 @@ const SectionButton: React.FC<SectionButtonProps> = ({
 
   // Define onClick callback
   function onSectionClick() {
-    document
-      .querySelector(destinationRef)
-      ?.scrollIntoView({ behavior: "smooth" });
+    document.querySelector(destinationRef)?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "center",
+    });
     SectionContext.setCurrentSection(section);
   }
 

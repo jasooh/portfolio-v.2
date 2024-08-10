@@ -52,7 +52,7 @@ const ProjectSection: React.FC = () => {
   return (
     <section
       id="2"
-      className="project observe section-container row-container justify-center"
+      className="project section-container row-container justify-center"
     >
       {projectData ? (
         <Carousel

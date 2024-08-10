@@ -49,7 +49,7 @@ const ContactSection: React.FC = () => {
   return (
     <section
       id="3"
-      className="contact observe section-container col-container gap-3"
+      className="contact section-container col-container gap-3"
     >
       {/* Form header */}
       <header className="row-container gap-2">

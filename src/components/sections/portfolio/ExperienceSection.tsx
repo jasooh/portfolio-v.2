@@ -44,7 +44,7 @@ const ExperienceSection: React.FC = () => {
   return (
     <section
       id="1"
-      className="min-h-[30rem] experience observe section-container col-container gap-2"
+      className="min-h-[30rem] experience section-container col-container gap-2"
     >
       {/* Accordion */}
       {/* <ExperienceSkeleton /> */}

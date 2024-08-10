@@ -7,33 +7,38 @@ import ProjectSection from "@/components/sections/portfolio/ProjectSection";
 import ContactSection from "@/components/sections/portfolio/ContactSection";
 
 // Hooks
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 // Context
 import { useSectionContext } from "@/context/SectionContext";
+import { clamp } from "three/src/math/MathUtils.js";
 
 const PortfolioSectionContainer: React.FC = () => {
   // Define context
   const SectionContext = useSectionContext();
 
-  // Intersection observer
-  useEffect(() => {
-    const observerSettings = { root: null, rootMargin: "0px", threshold: 1 };
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry: IntersectionObserverEntry) => {
-        if (entry.isIntersecting) {
-          SectionContext.setCurrentSection(Number(entry.target.id));
-        }
-      });
-    };
-    const observer = new IntersectionObserver(
-      observerCallback,
-      observerSettings
-    );
+  const [scrollPosition, setScrollPosition] = useState<number>(0);
+  const handleScroll = () => {
+    const position: number = window.scrollY;
+    setScrollPosition(position);
 
-    const elements = document.querySelectorAll(".observe");
-    elements.forEach((element) => observer.observe(element));
-  }, [SectionContext]);
+    const totalHeight: number = document.documentElement.scrollHeight;
+    const viewportHeight: number = window.innerHeight;
+
+    const scrollPortion: number =
+      scrollPosition / (totalHeight - viewportHeight);
+
+    const sectionIndex: number = clamp(Math.floor(scrollPortion * 4), 0, 3);
+    SectionContext.setCurrentSection(sectionIndex);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
 
   return (
     <>
