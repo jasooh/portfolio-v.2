@@ -44,5 +44,6 @@ const PortfolioSectionContainer: React.FC = () => {
     </>
   );
 };
+PortfolioSectionContainer.displayName = "PortfolioSectionContainer";
 
 export default PortfolioSectionContainer;

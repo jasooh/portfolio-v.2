@@ -14,6 +14,9 @@ import { FaLinkedin } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 import { IoIosDocument } from "react-icons/io";
 
+// Hooks
+import { useRouter } from "next/navigation";
+
 // Context
 import { useSectionContext } from "@/context/SectionContext";
 
@@ -26,6 +29,8 @@ const words = [
 ];
 
 const NameSection: React.FC = () => {
+  // Routing
+  const router = useRouter();
   // Define context
   const SectionContext = useSectionContext();
   const current = SectionContext.currentSection;
@@ -85,13 +90,17 @@ const NameSection: React.FC = () => {
             icon={<FaLinkedin className="size-8" />}
             src="https://www.linkedin.com/in/justin-abuyuan/"
           />
-          <IconButton
+          {/* <IconButton
             icon={<SiLeetcode className="size-8" />}
             src="https://leetcode.com/u/jasooh/"
-          />
+          /> */}
         </section>
         {/* TODO: Link to S3 bucket */}
-        <Button variant="outline" className="row-container gap-1">
+        <Button
+          variant="outline"
+          className="row-container gap-1"
+          onClick={() => router.push("/documents/resume.pdf")}
+        >
           <IoIosDocument className="size-5" />
           Résumé
         </Button>

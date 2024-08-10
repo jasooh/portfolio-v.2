@@ -1,5 +1,8 @@
 // Project card
 
+// Data types
+import { ReactNode } from "react";
+
 // Components
 import {
   Card,
@@ -18,6 +21,7 @@ interface ProjectCardProps {
   date: string;
   src: string;
   badges: string[];
+  children?: ReactNode;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -26,12 +30,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   date,
   src,
   badges,
+  children,
 }) => (
   <Card>
     <CardContent className="p-0 col-container items-center">
       <Image
         src={src}
-        className="w-full object-cover rounded-t-md"
+        layout="fixed"
+        className="w-full h-[20rem] object-cover rounded-t-md"
         width={500}
         height={500}
         alt="placeholder"
@@ -43,11 +49,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <h3 className="text-white mb-1">{type}</h3>
         <h4>{date}</h4>
       </CardTitle>
-      <CardDescription>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea at ab ipsam
-        officia veritatis, quidem dignissimos animi maiores, atque quo amet odio
-        adipisci beatae, totam accusantium exercitationem est! Corrupti, magni!
-      </CardDescription>
+      <CardDescription>{children}</CardDescription>
     </CardHeader>
     <CardFooter>
       <div className="row-container gap-2 flex-wrap">

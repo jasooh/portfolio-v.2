@@ -69,7 +69,9 @@ const ProjectSection: React.FC = () => {
                   date={project.date}
                   src={project.src}
                   badges={project.badges}
-                />
+                >
+                  {project.info}
+                </ProjectCard>
               </CarouselItem>
             ))}
           </CarouselContent>

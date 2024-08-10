@@ -58,10 +58,7 @@ const ExperienceSection: React.FC = () => {
             badges={experience.badges}
             src={experience.src}
           >
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae
-            natus, voluptates omnis blanditiis, eum deserunt expedita
-            architecto, ad dolore aspernatur perferendis. Ab quia officia
-            delectus odit veniam nihil, natus iusto.
+            {experience.info}
           </ExperienceAccordion>
         ))
       ) : (

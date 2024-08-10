@@ -40,7 +40,7 @@ const ProjectAccordion: React.FC<ProjectAccordionProps> = ({
         <section className="row-container gap-3">
           <Image
             src={src}
-            className="w-[8rem] object-cover rounded-md hidden xl:block"
+            className="w-[8rem] h-[8rem] object-cover rounded-md hidden xl:block"
             width={500}
             height={500}
             alt="placeholder"

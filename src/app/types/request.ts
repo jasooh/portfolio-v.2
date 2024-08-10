@@ -7,6 +7,7 @@ export interface ExperienceProps {
   date: string;
   badges: string[];
   src: string;
+  info: string;
 }
 
 // Project data
@@ -16,6 +17,7 @@ export interface ProjectProps {
   date: string;
   badges: string[];
   src: string;
+  info: string;
 }
 
 // General result data

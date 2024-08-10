@@ -15,7 +15,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div>
       <aside className="fixed h-screen w-1/12 min-w-[10rem] bg-primary-foreground col-container justify-between gap-3">
         <section className="col-container">
-          <Image src="/logo.png" width={500} height={500} alt="logo" />
+          <Image
+            src="/logo.png"
+            layout="fixed"
+            width={500}
+            height={500}
+            alt="logo"
+          />
           <AdminButton
             text="DASHBOARD"
             icon={<MdDashboard />}
