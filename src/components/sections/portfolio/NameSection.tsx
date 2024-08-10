@@ -49,7 +49,7 @@ const NameSection: React.FC = () => {
         </section>
 
         {/* Typed text */}
-        <section className="h-[3rem] mb-5">
+        <section className="h-[3rem] mb-10">
           <TypedText
             text={words[current]}
             className="fit-parent max-w-[25rem] text-secondary"

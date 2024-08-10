@@ -48,7 +48,7 @@
 
   /* Classes for content container */
   .section-container {
-    @apply w-full h-fit mb-20 z-10;
+    @apply w-full h-fit mb-20 z-10 max-w-[40rem];
   }
 
   /* Flex */

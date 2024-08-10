@@ -9,7 +9,7 @@ import { Button } from "../ui/Button";
 // Class name merger
 import { cn } from "@/lib/utils";
 
-// Datatypes
+// Data types
 import { ReactNode } from "react";
 
 interface AdminButtonProps {

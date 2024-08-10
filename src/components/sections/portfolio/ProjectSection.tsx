@@ -2,6 +2,12 @@
 
 // Section containing project content. Receives content from backend.
 
+// Data types
+import { ProjectProps, ResultProps } from "@/app/types/request";
+
+// Hooks
+import { useEffect, useState } from "react";
+
 // Components
 import {
   Carousel,
@@ -15,59 +21,67 @@ import ProjectCard from "../../media/ProjectCard";
 // shadcn/ui & embla carousel
 import Autoplay from "embla-carousel-autoplay";
 
-// Test data
-const info = [
-  {
-    title: "Black Magic II",
-    type: "Game",
-    date: "2019",
-    badges: ["Lua", "Blender", "Roblox Studio"],
-    src: "/placeholder.jpg",
-  },
-  {
-    title: "Path Pilot",
-    type: "Hackathon project",
-    date: "2023",
-    badges: ["Express.js", "Twilio", "Google Cloud"],
-    src: "/placeholder.jpg",
-  },
-  {
-    title: "React Bacterial Simulator",
-    type: "Front-end project",
-    date: "2024",
-    badges: ["React", "TypeScript", "Tailwind"],
-    src: "/placeholder.jpg",
-  },
-];
+const ProjectSection: React.FC = () => {
+  // Fetch project data
+  const [projectData, setProjectData] = useState<ProjectProps[]>();
+  const fetchDataFromAPI = async () => {
+    try {
+      const response = await fetch("/api/projects", {
+        headers: {
+          Accept: "application/json",
+          method: "GET",
+        },
+      });
+      if (response) {
+        const result: ResultProps = await response.json();
+        const formattedData: ProjectProps[] = result["data"] as ProjectProps[];
+        setProjectData(formattedData);
+      }
+    } catch (error) {
+      console.error("ERROR:", error);
+    } finally {
+      console.log("DEBUG: Finished loading project data!");
+    }
+  };
 
-const ProjectSection: React.FC = () => (
-  <section
-    id="2"
-    className="project observe section-container row-container justify-center"
-  >
-    <Carousel
-      className="w-full max-w-md"
-      opts={{ loop: true }}
-      plugins={[Autoplay({ delay: 5000 })]}
+  // Fetch data after rendering
+  useEffect(() => {
+    fetchDataFromAPI();
+  }, []);
+
+  return (
+    <section
+      id="2"
+      className="project observe section-container row-container justify-center"
     >
-      <CarouselContent>
-        {info.map((project, index) => (
-          <CarouselItem key={index}>
-            <ProjectCard
-              title={project.title}
-              type={project.type}
-              date={project.date}
-              src={project.src}
-              badges={project.badges}
-            />
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
-  </section>
-);
+      {projectData ? (
+        <Carousel
+          className="w-full max-w-md"
+          opts={{ loop: true }}
+          plugins={[Autoplay({ delay: 5000 })]}
+        >
+          <CarouselContent>
+            {projectData.map((project, index) => (
+              <CarouselItem key={index}>
+                <ProjectCard
+                  title={project.title}
+                  type={project.type}
+                  date={project.date}
+                  src={project.src}
+                  badges={project.badges}
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      ) : (
+        <></>
+      )}
+    </section>
+  );
+};
 ProjectSection.displayName = "ProjectSection";
 
 export default ProjectSection;

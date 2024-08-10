@@ -1,6 +1,6 @@
 // Icon button component for the hero section.
 
-// Datatypes
+// Data types
 import { ReactNode } from "react";
 
 // Class name merger
