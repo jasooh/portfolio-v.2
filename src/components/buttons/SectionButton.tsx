@@ -34,7 +34,6 @@ const SectionButton: React.FC<SectionButtonProps> = ({
       block: "center",
       inline: "center",
     });
-    SectionContext.setCurrentSection(section);
   }
 
   return (
