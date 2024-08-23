@@ -1,13 +1,44 @@
-// Data types
-import { ReactNode } from "react";
+// Tiptap
+import { useEditor, EditorContent } from "@tiptap/react";
+// Extensions
+import StarterKit from "@tiptap/starter-kit";
+import Placeholder from "@tiptap/extension-placeholder";
 
 interface RichTextProps {
-  children: ReactNode;
-  endpoint?: string;
+  text: string;
+  onChange?: (richText: string) => void;
+  placeholder?: string;
+  className?: any;
 }
 
 // TBC: This component will fetch text from the backend. Replace children with the returned data from the backend.
-const RichText: React.FC<RichTextProps> = ({ children }) => <p>{children}</p>;
-RichText.displayName = "RichText"
+const RichText: React.FC<RichTextProps> = ({
+  text,
+  onChange,
+  placeholder,
+  className,
+}) => {
+  const editor = useEditor({
+    extensions: [
+      StarterKit,
+      Placeholder.configure({ placeholder: placeholder || "Placeholder" }),
+    ],
+    content: text,
+    editorProps: {
+      attributes: {
+        class: className,
+      },
+    },
+    onUpdate: ({ editor }) => {
+      if (onChange) {
+        onChange(editor.getHTML());
+        console.log(editor.getHTML());
+      }
+    },
+  });
+
+  return <EditorContent className="tiptap" editor={editor} />;
+};
+RichText.displayName = "RichText";
 
 export default RichText;

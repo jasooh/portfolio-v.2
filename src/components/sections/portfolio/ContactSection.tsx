@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/Form";
 import { Input } from "@/components/ui/Input";
 import { TextArea } from "../../ui/TextArea";
+import RichText from "@/components/text/RichText";
 
 const ContactSection: React.FC = () => {
   // Form requirements
@@ -47,10 +48,7 @@ const ContactSection: React.FC = () => {
   }
 
   return (
-    <section
-      id="3"
-      className="contact section-container col-container gap-3"
-    >
+    <section id="3" className="contact section-container col-container gap-3">
       {/* Form header */}
       <header className="row-container gap-2">
         <span className="text-secondary">{"//"}</span>
@@ -82,7 +80,12 @@ const ContactSection: React.FC = () => {
               <FormItem>
                 <FormLabel>Message</FormLabel>
                 <FormControl>
-                  <TextArea placeholder="Message" {...field} />
+                  <RichText
+                    text={field.value}
+                    onChange={field.onChange}
+                    placeholder={field.name}
+                    className="min-h-[5rem] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
