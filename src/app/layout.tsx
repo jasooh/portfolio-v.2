@@ -4,7 +4,7 @@
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // Data types
-import { ReactNode } from "react";
+import { ReactNode, Suspense } from "react";
 
 // Metadata & Fonts
 import type { Metadata } from "next";
@@ -21,6 +21,13 @@ export const metadata: Metadata = {
 // Theme provider
 import ThemeProvider from "@/components/theme/ThemeProvider";
 
+// Loading
+const Loader: React.FC = () => (
+  <div className="w-screen h-screen flex items-center justify-center">
+    <p className="text-3xl text-primary">... Loading ...</p>
+  </div>
+);
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -35,7 +42,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <Suspense fallback={<Loader />}>{children}</Suspense>
           <SpeedInsights />
         </ThemeProvider>
       </body>
