@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 
 // Components
 import ExperienceAccordion from "../../media/ExperienceAccordion";
+import RichText from "@/components/text/RichText";
 
 // Test data
 
@@ -44,7 +45,7 @@ const ExperienceSection: React.FC = () => {
   return (
     <section
       id="1"
-      className="min-h-[30rem] experience section-container col-container gap-2"
+      className="not-summary min-h-[30rem] experience section-container col-container gap-2"
     >
       {/* Accordion */}
       {/* <ExperienceSkeleton /> */}
@@ -58,7 +59,7 @@ const ExperienceSection: React.FC = () => {
             badges={experience.badges}
             src={experience.src}
           >
-            {experience.info}
+            <RichText text={experience.info} editable={false} />
           </ExperienceAccordion>
         ))
       ) : (

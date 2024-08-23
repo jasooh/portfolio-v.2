@@ -80,7 +80,16 @@
   }
 
   /* OVERWRITING STYLES FOR TIPTAP */
+  .tiptap p {
+    font-weight: 400;
+  }
+
   .tiptap strong {
+    font-weight: 700;
+  }
+
+  .not-summary strong {
+    color: black;
     font-weight: 700;
   }
 
