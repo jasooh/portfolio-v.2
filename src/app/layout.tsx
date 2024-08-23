@@ -24,7 +24,7 @@ import ThemeProvider from "@/components/theme/ThemeProvider";
 // Loading
 const Loader: React.FC = () => (
   <div className="w-screen h-screen flex items-center justify-center">
-    <p className="text-3xl text-primary">... Loading ...</p>
+    <p className="text-md text-primary">loading ...</p>
   </div>
 );
 
