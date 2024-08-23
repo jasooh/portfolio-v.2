@@ -8,6 +8,7 @@ interface RichTextProps {
   text: string;
   onChange?: (richText: string) => void;
   placeholder?: string;
+  editable: boolean;
   className?: any;
 }
 
@@ -16,6 +17,7 @@ const RichText: React.FC<RichTextProps> = ({
   text,
   onChange,
   placeholder,
+  editable,
   className,
 }) => {
   const editor = useEditor({
@@ -29,6 +31,7 @@ const RichText: React.FC<RichTextProps> = ({
         class: className,
       },
     },
+    editable: editable,
     onUpdate: ({ editor }) => {
       if (onChange) {
         onChange(editor.getHTML());

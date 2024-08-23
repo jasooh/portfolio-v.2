@@ -26,7 +26,7 @@ const summaryText: string = `
 
 const SummarySection: React.FC = () => (
   <section id="0" className="summary section-container">
-    <RichText text={summaryText} />
+    <RichText text={summaryText} editable={false} />
   </section>
 );
 SummarySection.displayName = "SummarySection";
