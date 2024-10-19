@@ -8,7 +8,7 @@ import { Canvas } from "@react-three/fiber";
 
 export default function BackgroundEffect() {
   return (
-    <div className="fixed w-screen h-screen flex items-center justify-center pointer-events-none">
+    <div className="fixed w-screen h-screen flex items-center opacity-75 justify-center pointer-events-none">
       <Canvas>
         <SphereEffect />
       </Canvas>
