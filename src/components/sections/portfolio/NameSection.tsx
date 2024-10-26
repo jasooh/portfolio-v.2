@@ -94,16 +94,16 @@ const NameSection: React.FC = () => {
             icon={<SiLeetcode className="size-8" />}
             src="https://leetcode.com/u/jasooh/"
           /> */}
+          <Button
+              variant="outline"
+              className="opacity-50 row-container gap-1 hover:text-primary hover:opacity-100"
+              onClick={() => router.push("/documents/resume.pdf")}
+          >
+            <IoIosDocument className="size-5" />
+            Résumé
+          </Button>
         </section>
         {/* TODO: Link to S3 bucket */}
-        <Button
-          variant="outline"
-          className="row-container gap-1"
-          onClick={() => router.push("/documents/resume.pdf")}
-        >
-          <IoIosDocument className="size-5" />
-          Résumé
-        </Button>
       </nav>
     </header>
   );

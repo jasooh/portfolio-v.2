@@ -15,7 +15,7 @@ interface SectionButtonProps {
 const IconButton: React.FC<SectionButtonProps> = ({ className, icon, src }) => (
   <a
     className={cn(
-      "opacity-50 hover:text-secondary hover:opacity-100 duration-300",
+      "opacity-50 hover:text-secondary hover:opacity-100 duration-300 flex items-center",
       className
     )}
     href={src}

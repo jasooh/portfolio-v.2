@@ -11,7 +11,7 @@ export default function SphereEffect() {
   const uniforms = useRef({
     uTime: { value: 0 },
     uFrequency: { value: 50 },
-    uPrimaryColor: { value: new THREE.Color("#DCB53F") },
+    uPrimaryColor: { value: new THREE.Color("#9e78e9") },
   });
 
   useFrame((state, delta) => {

@@ -5,10 +5,10 @@
 @layer components {
   /* Text effects */
   .text-stroke {
-    text-shadow: hsl(var(--stroke)) 0.05rem 0.05rem 0px,
-      hsl(var(--stroke)) -0.05rem 0.05rem 0px,
-      hsl(var(--stroke)) 0.05rem -0.05rem 0px,
-      hsl(var(--stroke)) -0.05rem -0.05rem 0px;
+    text-shadow: hsl(var(--stroke)) 0.05rem 0.05rem 0,
+      hsl(var(--stroke)) -0.05rem 0.05rem 0,
+      hsl(var(--stroke)) 0.05rem -0.05rem 0,
+      hsl(var(--stroke)) -0.05rem -0.05rem 0;
   }
 
   /* Screen */
@@ -38,7 +38,7 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #dcb53f;
+    background: #9e78e9;
     border-radius: 5px;
   }
 
